@@ -68,6 +68,14 @@ sudo docker-compose exec backend python manage.py load_tags
 sudo docker-compose exec backend python manage.py load_ingrs
 ```
 
+```
+sudo docker-compose exec backend python manage.py loaddata dump.json 
+```
+
+```
+sudo docker cp host_source_path nginx:destination_path
+```
+
 ### Документация и примеры запросов доступны по адресу:
 
 ```
