@@ -79,11 +79,11 @@ class AddAndDeleteSubscribe(
         instance = self.get_object()
         if request.user.id == instance.id:
             return Response(
-                {'errors': 'На самого себя не подписаться!'},
+                {'errors': 'На самого себя не подписаться.'},
                 status=status.HTTP_400_BAD_REQUEST)
         if request.user.follower.filter(author=instance).exists():
             return Response(
-                {'errors': 'Уже подписан!'},
+                {'errors': 'Уже подписан.'},
                 status=status.HTTP_400_BAD_REQUEST)
         subs = request.user.follower.create(author=instance)
         serializer = self.get_serializer(subs)
@@ -221,6 +221,7 @@ class RecipesViewSet(viewsets.ModelViewSet):
         permission_classes=(IsAuthenticated,))
     def download_shopping_cart(self, request):
         """Скачать список с ингредиентами."""
+
         buffer = io.BytesIO()
         page = canvas.Canvas(buffer)
         pdfmetrics.registerFont(TTFont('Vera', 'Vera.ttf'))

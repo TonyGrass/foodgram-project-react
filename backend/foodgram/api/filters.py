@@ -43,7 +43,7 @@ class RecipeFilter(filters.FilterSet):
         label='В избранных.')
     tags = filters.AllValuesMultipleFilter(
         field_name='tags__slug',
-        label='Ссылка')
+        label='Ссылка.')
 
     class Meta:
         model = Recipe

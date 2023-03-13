@@ -20,12 +20,12 @@ class RecipeAdmin(admin.ModelAdmin):
     search_fields = (
         'name', 'cooking_time',
         'author__email', 'ingredients__name')
-    list_filter = ('pub_date', 'tags',)
+    list_filter = ('pub_date', 'author', 'name', 'tags')
     inlines = (RecipeIngredientAdmin,)
     empty_value_display = EMPTY_MSG
 
     @admin.display(
-        description='Электронная почта автора')
+        description='Электронная почта автора.')
     def get_author(self, obj):
         return obj.author.email
 

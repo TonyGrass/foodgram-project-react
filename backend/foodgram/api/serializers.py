@@ -208,7 +208,7 @@ class RecipeWriteSerializer(serializers.ModelSerializer):
         for ingredient in ingredients:
             if int(ingredient.get('amount')) < 1:
                 raise serializers.ValidationError(
-                    'Количество ингредиента >= 1!')
+                    'Количество ингредиента >= 1.')
         return ingredients
 
     def create_ingredients(self, ingredients, recipe):

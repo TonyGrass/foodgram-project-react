@@ -10,7 +10,8 @@ services:
       - ./.env
 
   backend:
-    image: tonygrass/foodgram_backend:v1.0.0
+    # image: tonygrass/foodgram_backend:v1.0.0
+    build: ../backend/foodgram/
     restart: always
     volumes:
       - data_value:/app/data/
